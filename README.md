@@ -1,3 +1,13 @@
+# Source Material
+
+Fullstack React with TypeScript
+
+## Dependecies
+
+user-immer: to simplify updating the state
+yarn add user-immer
+nanoid: to generate list id
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
