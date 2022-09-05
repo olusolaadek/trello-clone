@@ -4,9 +4,10 @@ import { Card } from "./Card";
 import { AddNewItem } from "./AddNewItem";
 import { useAppState } from "./state/AppStateContext";
 import { AppContainer } from "./styles";
+import { addList } from "./state/actions";
 
 export const App = () => {
-  const { lists } = useAppState();
+  const { lists, dispatch } = useAppState();
 
   return (
     <AppContainer>
@@ -15,8 +16,8 @@ export const App = () => {
       ))}
 
       <AddNewItem
-        onAdd={console.log}
         toggleButtonText="+ Add another list"
+        onAdd={(text) => dispatch(addList(text))}
         dark
       />
       {/* <Column text="To do">

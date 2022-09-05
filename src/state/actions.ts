@@ -8,7 +8,7 @@ export type Action =
         payload: { text: string; listId: string }
     }
 
-export const addtask = (text: string, listId: string): Action => (
+export const addTask = (text: string, listId: string): Action => (
     {
         type: "ADD_TASK",
         payload: { text, listId }

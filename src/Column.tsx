@@ -3,14 +3,15 @@ import { ColumnContainer, ColumnTitle } from "./styles";
 import { AddNewItem } from "./AddNewItem";
 import { Card } from "./Card";
 import { useAppState } from "./state/AppStateContext";
-
+import { addTask } from "./state/actions";
 interface ColumnProps {
   text: string;
   id: string;
 }
 
 export const Column = ({ text, id }: ColumnProps) => {
-  const { getTasksByListId } = useAppState();
+  const { getTasksByListId, dispatch } = useAppState();
+
   const tasks = getTasksByListId(id);
 
   return (
@@ -23,7 +24,7 @@ export const Column = ({ text, id }: ColumnProps) => {
 
       <AddNewItem
         toggleButtonText="+ Add another card"
-        onAdd={console.log}
+        onAdd={(text) => dispatch(addTask(text, id))}
         dark
       />
       {/* <Card text="Generate app scaffold" id={"0"} />
